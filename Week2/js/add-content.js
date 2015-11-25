@@ -14,10 +14,10 @@ else if (time >= 12 && time < 18) {
 	greetings.textContent = "Good afternoon";
 }
 else if (time >= 18 && time < 23) {
-	greetings.textContent = "Good evening"
+	greetings.textContent = "Good evening";
 }
 else {
-	greetings.textContent = "Good night"
+	greetings.textContent = "Good night";
 }
 
 
@@ -26,15 +26,20 @@ else {
 var products = ["Stamford T-shirt", "Stamford Notebook", "Stamford Wristband"];
 var price = [10, 5, 1];
 var total = 0;
-var 
+var payoff = 20;
 
 
+//product list
 var productList = document.getElementById("productList");
 for (var i = 0; i < products.length; i++) {
 	productList.innerHTML += "<li>" + products[i] + ": $" + price[i] + "</li>";
 	total += price[i];
-
 }
 
+//discount
+var discount = document.getElementById("discount");
+discount.textContent = "20% off!";
+
+//total price
 var totalPriceEle = document.getElementById("totalPrice");
-totalPriceEle.textContent = "$" + total;
+totalPriceEle.textContent = "$" + (total - (total*(payoff/100)));
