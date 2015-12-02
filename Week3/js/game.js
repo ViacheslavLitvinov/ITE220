@@ -1,5 +1,5 @@
 var game = {
-	answer: 50, // Need to random this value from 0-100
+	answer: Math.round(Math.random()*100), // Need to random this value from 0-100
 	init: function() {
 		var self = this;
 		// Number 1
@@ -49,7 +49,7 @@ var game = {
 		ele.addEventListener("click", function(){
 			self.click(8);
 		}, false)
-		
+		5
 		// Number 9
 		var ele = document.getElementById("nine");
 		ele.addEventListener("click", function(){
@@ -78,7 +78,7 @@ var game = {
 		//alert("This is not correct! Try again. ");
 		var userValueEle = document.getElementById("userValue");
 		if (userValueEle.value == self.answer) {
-			alert("Congratulations! You win!");
+			alert("Congratulations! You win! \nRefresh the page to start a new game.");
 			
 		}
 		else if (userValueEle.value > this.answer) {
